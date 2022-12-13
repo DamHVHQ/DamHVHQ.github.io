@@ -1,0 +1,272 @@
+
+/* Defining the theme for the card: colors, fonts, spacing. 
+This uses CSS variables - so you only have to change the colors in one place */ 
+:root {
+    /* The color for your card background and background pattern */ 
+    --background: #ffffff;
+    --background-decor: #f0e1d3;
+  
+    /* Colors for the elements on your card */ 
+    --banner-bg: #f5bd55;
+    --banner-txt: #1d3047;
+  
+    /* Message area colors */ 
+    --message-bg: #F1EDE9;
+    --message-line: #94ACD4;
+    --message-txt: #333333;
+  
+    /* Fonts */ 
+    --font-banner: cursive;
+    --font-text: sans-serif;
+  
+    /* Space and other details */
+    --space: 16px;
+    --space-xsm: 4px;
+    --space-sm: 8px;
+    --space-lg: 24px;
+    --space-xlg: 48px;
+  }
+  
+  /* Base template configurations */ 
+  body {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+  
+    /* background color - here we are using the variable we created earlier! */ 
+    background-color: var(--background);
+  
+    /* background pattern - remove the lines below and paste the new code if you want to use a different style */ 
+    background-image: linear-gradient(var(--background-decor), 1px, transparent 0), linear-gradient(90deg,var(--background-decor), 1px, transparent 0);
+    background-size: 30px 30px;
+  
+  }
+  
+  #card {
+    max-width: 420px;
+    height: 90%;
+    padding-top: var(--space-lg);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top:0px;
+    opacity:0;
+    left: -200%;;
+   
+  }
+  
+  .bday-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 240px;
+    padding: var(--space-sm) var(--space-sm) var(--space-xlg);
+    background: white;
+    border-radius: 4px;
+    box-shadow: var(--space-xsm) var(--space-xsm) 15px rgba(0,0,0, .15);
+  
+    /* Edit the Translate property below to adjust the position of your picture */ 
+    transform: rotate(5deg) translate(20px, 45px);
+  }
+  
+  .bday-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+  }
+  
+  .bday-decor--container {
+    position: relative;
+    left: 10px;
+  }
+  
+  .bday-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    font-size: 42px;
+    z-index: 1;
+  
+    /* Play around with those properties to change your banner styling */ 
+    color: var(--banner-txt);
+    font-family: var(--font-banner);
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+    gap: var(--space-sm) 0;
+  }
+  
+  .bday-banner span {
+    background: var(--banner-bg);
+    padding: var(--space) var(--space-lg);
+    flex-grow: 0;
+  }
+  
+  .bday-banner span:nth-child(2) {
+    margin-left: var(--space-lg);
+  }
+  
+  
+  .bday-message {
+    max-width: 88%;
+    padding: 35px var(--space);
+    font-family: var(--font-text);
+    line-height: 32px;
+    color: var(--message-txt);
+  }
+  
+  /* Paper */
+  .bday-message--paper {
+    background: repeating-linear-gradient(var(--message-bg), var(--message-bg) 31px, var(--message-line) 31px, var(--message-line) 32px);
+    box-shadow: var(--space-xsm) var(--space-xsm) 15px rgba(0,0,0, .15);
+  }
+  /* End - Paper */
+  
+  /* Block right - to use this style copy lines 14 to 28 */
+  .bday-message--block-right {
+    position: relative;
+  }
+  
+  .bday-message--block-right::before {
+    content: "";
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--message-bg);
+    z-index: -1;
+  }
+  /* End - Block right */
+  
+  /* Block left - to use this style copy lines 32 to 46 */
+  .bday-message--block-left {
+    position: relative;
+  }
+  
+  .bday-message--block-left::before {
+    content: "";
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--message-bg);
+    z-index: -1;
+  }
+  /* End - Block left */
+  
+  
+  .bday-decor {
+    /* Emojis are text - so here we are setting a font-size to make them bigger */ 
+    font-size: 96px;
+  }
+  
+  /* Positioning for the emojis - play around with the values to change the placement of your decorations */ 
+  .bday-decor--top-right { 
+    position: absolute;
+    bottom: -70px;
+    right: 10px;
+  }
+  
+  .bday-decor--top-left {
+    position: absolute;
+    bottom: 0px;
+    left: -50px;
+  }
+  
+  .bday-decor--bottom-right {
+    position: absolute; 
+    right: -20px;
+    top: 485px;
+  }
+  
+  /* Animations */ 
+  
+  /* Here we designate an specific animation to an specific element using a class. We have a defined name, time and iteration-count for each animation. We can also define the origin point from which the animation will happen - the default is the center. */  
+  .zoom-left-in-out {
+    animation-name: zoom-left-in-out;
+    animation-duration: 1.75s;
+    animation-iteration-count: infinite;
+    transform-origin: left bottom;
+  }
+  
+  /* Here we specify what will change on the element when they animate */ 
+  @keyframes zoom-left-in-out {
+    /* Animation will start and end with the same settings */ 
+    0%, 100% {
+      transform: scale(0.95) rotate(2deg);
+    }
+  
+    /* Animation will reach those settings 50% into the duration time we set on the declaration */
+    50% {
+      transform: scale(1) rotate(-2deg);
+    }
+  }
+  
+  /* pulse */ 
+  .pulse {
+    animation-name: pulse;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(0.9);
+    }
+  
+    50% {
+      transform: scale(1);
+    }
+  }
+  /* pulse - End */
+  
+  /* float */ 
+  .float {
+    animation-name: float;
+    animation-duration: 1.9s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  /* float - End */
+  
+  /* spin */ 
+  .spin {
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /* spin - End */
+  
+    .thiepshow{
+    opacity: 1 !important;
+    left: 20px !important;
+    transition: all 2s;
+    }
+        
+    
