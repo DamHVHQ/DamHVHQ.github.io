@@ -1,0 +1,203 @@
+
+ body {
+	 font-family: 'Damion', cursive;
+	 background: #fbefec;
+	 background: -moz-radial-gradient(center, ellipse cover, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+	 background: -webkit-radial-gradient(center, ellipse cover, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+	 background: radial-gradient(ellipse at center, rgba(251, 239, 236, 1) 0%, rgba(218, 180, 180, 1) 100%);
+	 height: 100vh;
+	 overflow: hidden;
+}
+ 
+ body .birthday_inner__modal .modal_image {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 transform: translateY(-60%);
+}
+ body .birthday_inner__modal .modal_image img {
+	 width: 100px;
+}
+  
+ body .birthday_inner .stage1 {
+	 display: block;
+
+}
+ body .birthday_inner__stage {
+	 width: 500px;
+	 position: absolute;
+	 left: 0;
+	 right: 0;
+	 margin: auto;
+	 text-align: center;
+	 top: 50%;
+	 display: none;
+	 transform: translateY(-50%);	 
+}
+
+ 
+ body .birthday_inner__stage button {
+	 clear: both;
+	 font-family: 'Damion', cursive;
+	 background: transparent;
+	 border: 2px solid #e77572;
+	 color: #e77572;
+	 font-size: 22px;
+	 padding: 14px 28px;
+	 border-radius: 40px;
+	 transition: all 0.23s;
+	 outline: none;
+	 cursor: pointer;
+}
+ body .birthday_inner__stage button:hover {
+	 background: #e77572;
+	 color: white;
+}
+
+.happy.open {
+	display: flex;
+}
+
+.happy {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.2);
+	display: none;
+	justify-content: center;
+	
+}
+
+.happy-year {
+	background: #fff;
+	width: 1000px;
+	height: 496px;
+	position: relative;
+	animation: modalFaceIn ease .9s;
+}
+ 
+#closes {
+	background: #009688;
+	border: none;
+	color: #fff;
+	width: 100%;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 18px;
+	cursor: pointer;
+
+
+}
+
+
+ 
+ @keyframes bounce {
+	 0% {
+		 transform: scale(0);
+	}
+	 25% {
+		 transform: scale(1.06);
+	}
+	 50% {
+		 transform: scale(0.965);
+	}
+	 75% {
+		 transform: scale(1.02);
+	}
+	 100% {
+		 transform: scale(1);
+	}
+}
+ @keyframes in {
+	 from {
+		 opacity: 0;
+	}
+	 to {
+		 opacity: 1;
+	}
+}
+ @keyframes moveup {
+	 from {
+		 top: 0;
+	}
+	 to {
+		 top: -30px;
+	}
+}
+ @keyframes mix {
+	 0% {
+		 transform: translateX(0px);
+	}
+	 50% {
+		 transform: translateX(28px);
+	}
+	 100% {
+		 transform: translateX(0px);
+	}
+}
+ @keyframes candle {
+	 from {
+		 opacity: 0;
+	}
+	 to {
+		 opacity: 1;
+	}
+}
+ 
+
+.gallery{
+	margin-left: auto;
+	margin-bottom: 100px;
+	text-align: initial;
+	position:relative;
+	width:168px;
+	height:231px;
+	transform-style:preserve-3d;
+	animation:rotate 35s linear infinite;
+  }
+  
+  @keyframes rotate{
+	from{
+	  transform:perspective(1200px) rotateY(0deg);
+	}
+	
+	to{
+	  transform:perspective(1200px) rotateY(360deg);
+	}
+  }
+  
+  .gallery span{
+	position:absolute;
+	width:100%;
+	height:100%;
+	transform-origin:center;
+	transform-style:preserve-3d;
+	transform:rotateY(calc(var(--i) * 45deg)) translateZ(380px);
+  }
+  
+  .gallery span img{
+	position:absolute;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+  }
+
+@media (max-width: 740px) {
+
+	.birthday_inner__stage {
+
+   		width: 100% !important;
+   }
+
+   img {
+   	width: 100% !important;
+   }
+   .happy-year {
+   	width: 1000px;
+	height: 286px;
+   }
+}
+
