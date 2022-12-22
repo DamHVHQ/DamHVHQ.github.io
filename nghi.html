@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/tang.css">
+</head>
+
+<body>
+    <audio controls autoplay loop>
+        <source src="assets/Music/HappyNewYear-ABBA_3rkqc.mp3">
+    </audio>
+    <div class="birthday">
+        <div class="birthday_inner">
+          <div class="birthday_inner__modal">
+            <div class="modal_image">
+              <img /></div>
+            </div>
+          <div class="birthday_inner__stage stage1">
+            <div class="intro_cake">
+              <img class="intro" src="" />
+              <div class="gallery">
+                <span style="--i:1">
+                  <img src="assets/img/1.jpg" alt="" />
+                </span>
+                <span style="--i:2">
+                  <img src="assets/img/2.jpg" alt="" />
+                </span>
+                <span style="--i:3">
+                  <img src="assets/img/4.jpg" alt="" />
+                </span>
+                <span style="--i:4">
+                  <img src="assets/img/5.jpg" alt="" />
+                </span>
+                <span style="--i:5">
+                  <img src="assets/img/6.jpg" alt="" />
+                </span>
+                <span style="--i:6">
+                  <img src="assets/img/7.jpg" alt="" />
+                </span>
+                <span style="--i:7">
+                  <img src="assets/img/10.jpg" alt="" />
+                </span>
+                <span style="--i:8">
+                  <img src="assets/img/9.jpg" alt="" />
+                </span>
+              </div>
+            </div>
+            <button class="start js-buy-ticket">Happy new years</button>
+          </div>
+        </div>
+      </div>
+    <div class="happy">
+
+      <div class="happy-year">
+        <img src="assets/img/10-12.jpg">
+      </div>
+      
+      
+    </div>
+</body>
+<script>
+  const buyBtns = document.querySelectorAll('.js-buy-ticket')
+  const modal = document.querySelector('.happy')
+
+  function showBuytickets() {
+      modal.classList.add('open')
+    }
+
+  function hideBuytickets() {
+      modal.classList.remove('open')
+    }
+
+  for (const buyBtn of buyBtns) {
+      buyBtn.addEventListener('click',showBuytickets)
+    }
+
+  modal.addEventListener('click', hideBuytickets)
+</script>
+</html>
